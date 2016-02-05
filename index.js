@@ -7,10 +7,15 @@ document.body.style.fontSize = '3em'
 document.body.appendChild(
   h('div', {style: {fontSize: '3em'}},
   fs.readFileSync(path.join(__dirname, 'slides.md'), 'utf8')
+  //this divider is valid markdown (<hr>) but easier to split it
+  //then parse each section, because then we can easily surround each slide in a div.
   .split('---')
   .map(function (d) {
     var div = h('div.slide', {style: {display: 'none'}})
     div.innerHTML = marked(
+      //this was a hack because when it's running in electron it has the wrong
+      //location...  turns out, this because I was running it via my electro module.
+      //anyway it was faster to fix it like this in the moment.
       d.split('./images').join(path.join(__dirname, 'images'))
     )
     return div
