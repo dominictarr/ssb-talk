@@ -1,0 +1,21 @@
+{
+  "name": "ssb",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dominictarr/ssb",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dominictarr/ssb.git"
+  },
+  "dependencies": {
+    "hyperscript": "^1.4.7",
+    "marked": "^0.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electro index.js",
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "author": "Dominic Tarr <dominic.tarr@gmail.com> (http://dominictarr.com)",
+  "license": "MIT"
+}
